@@ -10,7 +10,7 @@ import dash_bootstrap_components as dbc  # Import Bootstrap components
 # Load your data
 for i in range(0, 40):  # Loop from 1 to 40
     # Construct the filename
-    filename = f'/Users/bharukashiv/Desktop/BTP/full_compiled_data{i}.csv'
+    filename = f'./full_compiled_data{i}.csv'
     # Load the dataset into a DataFrame
     df = pd.read_csv(filename)
     # Create a dynamic variable name like df1, df2, ..., df40
@@ -186,7 +186,7 @@ def update_figure(value,year,in_lat,in_lon,clicks):
     else:
         chosen_datastat = value
     dynamic_df = globals()[f'df{int(year)}']
-    cities = pd.read_csv(f'/Users/bharukashiv/Desktop/BTP/cities.csv')
+    cities = pd.read_csv(f'./cities.csv')
     color_value_map = {
         'wpd_median': 'color_wpd_median',
         'ghi_median': 'color_ghi_median',
