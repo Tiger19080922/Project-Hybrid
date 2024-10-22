@@ -18,6 +18,7 @@ for i in range(0, 40):  # Loop from 1 to 40
     globals()[f'df{a}'] = df
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"])  # Use Bootstrap theme
+server = app.server
 
 # Define the layout with styles
 app.layout = dbc.Container([
