@@ -30,19 +30,14 @@ app.layout = dbc.Container([
                 html.Br(),
                 html.P("This is an open-source initiative to evaluate the overall feasibility of Hybrid Power Plants in India", 
                        style={'color': 'white','font-size': '28px'}),
-                html.Br(),
                 # Divider
                 html.Hr(style={'border-color': '#555'}),
 
-                html.Br(),
 
                 # Section for Radio Items (similar to 'RISKS' section in the image)
                 html.H4("CLIMATE", style={'color': '#21fc0d','font-weight': 'bold','font-size': '64px'}),
-
-                html.Br(),
                 html.Hr(style={'border-color': '#555'}),
                 html.H4("WIND", style={'color': '#A7A8AA','font-weight': 'bold','font-size': '32px'}),
-                html.Br(),
                 dbc.Row(
                     [
                         dbc.Col(dbc.Button("WPD Median", id='btn-wpd_median', outline=True, n_clicks=0, color="secondary", 
@@ -57,11 +52,9 @@ app.layout = dbc.Container([
                                 className="m-1", style={'font-size': '24px', 'padding': '15px 30px', 'height': '100px', 'width': '100%'}), width=4),                               
                     ]
                 ),
-                html.Br(),
                 html.Hr(style={'border-color': '#555'}),
                 # Section for Solar Variables
                 html.H4("SOLAR", style={'color': '#f39c12','font-weight': 'bold','font-size': '32px'}),
-                html.Br(),
                 dbc.Row(
                     [
                         dbc.Col(dbc.Button("GHI Median", id='btn-ghi_median', outline=True, n_clicks=0, color="warning", 
@@ -76,22 +69,19 @@ app.layout = dbc.Container([
                                 className="m-1", style={'font-size': '24px', 'padding': '15px 30px', 'height': '100px', 'width': '100%'}), width=4),  
                     ]
                 ),
-                html.Br(),
                 html.Hr(style={'border-color': '#555'}),
                 # Section for Synergy Variables
                 html.H4("SYNERGY", style={'color': '#3498db','font-weight': 'bold','font-size': '32px'}),
-                html.Br(),
                 dbc.Row(
                     [
                         dbc.Col(dbc.Button("Wind Solar Synergy", id='btn-wss', outline=True, n_clicks=0, color="info", 
-                                className="m-1", style={'font-size': '24px', 'padding': '15px', 'height': '100px', 'width': '100%'}), width=4),
+                                className="m-1", style={'font-size': '24px', 'padding': '15px', 'height': '150px', 'width': '100%'}), width=4),
                         dbc.Col(dbc.Button("Wind Complements Solar", id='btn-wcs', outline=True, n_clicks=0, color="info", 
-                                className="m-1", style={'font-size': '24px', 'padding': '15px', 'height': '100px', 'width': '100%'}), width=4),
+                                className="m-1", style={'font-size': '24px', 'padding': '15px', 'height': '150px', 'width': '100%'}), width=4),
                         dbc.Col(dbc.Button("Solar Complements Wind", id='btn-scw', outline=True, n_clicks=0, color="info", 
-                                className="m-1", style={'font-size': '24px', 'padding': '15px', 'height': '100px', 'width': '100%'}), width=4),
+                                className="m-1", style={'font-size': '24px', 'padding': '15px', 'height': '150px', 'width': '100%'}), width=4),
                     ]
                 ),
-                html.Br(),
                 # Divider
                 html.Hr(style={'border-color': '#555'}),
                 # Section for Slider (similar to 'YEAR' section in the image)
@@ -113,7 +103,7 @@ app.layout = dbc.Container([
                 html.A("READ METHODS", href="#", style={'color': '#00bfff','font-weight': 'bold',}),  # Read Methods link
 
             ], style={'padding': '20px', 'background-color': '#212121', 'border-radius': '10px','font-size': '32px'}),
-        ], width=3),  # Adjust width to suit the layout
+        ],xs=12, sm=6, md=3, lg=3),  # Adjust width to suit the layout
 
         # Right Panel for Map/Graph (similar to the map panel in your image)
         dbc.Col([
@@ -136,7 +126,7 @@ app.layout = dbc.Container([
                     'border-radius': '50px',
                     'z-index': 1000
                 }),
-        ], width=9),
+        ],xs=12, sm=6, md=9, lg=9),
                     # Overlay Search Bar
 
     ]), dcc.Store(id='intermediate-value', data='wss')
